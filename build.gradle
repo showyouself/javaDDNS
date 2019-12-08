@@ -1,0 +1,88 @@
+/**
+ * 声明是gradle脚本自身需要使用的资源
+ */
+buildscript {
+    ext {
+        springBootVersion = '2.1.1.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+/**
+ * 依赖的插件，作为开发/编译/打包时的一种辅助工具，一般不会打包进项目中
+ */
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+/**
+ * 项目所在的组和版本信息
+ */
+group = 'com.zengbingo'
+
+
+/**
+ * 版本信息
+ */
+version = ''
+
+
+/**
+ * 指定编译.java文件的jdk版本
+ */
+sourceCompatibility = 1.8
+
+/**
+ * 确保.class文件与指定版本或者更新版本的java虚拟机兼容
+ */
+targetCompatibility = 1.8
+
+
+/**
+ * SNAPSHOT 版本更新策略
+ */
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+
+/**
+ * 项目本身依赖的资源所在的仓库
+ */
+repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    jcenter()
+    mavenCentral()
+}
+
+
+/**
+ * 项目本身依赖的资源 ，会按照配置来打包进项目
+ * 在：https://mvnrepository.com/可以找到各种插件，Java世界的精彩之处
+ *
+ * 关于：implementation，runtimeOnly等的区别
+ * https://blog.csdn.net/yuzhiqiang_1993/article/details/78366985
+ */
+dependencies {
+    /**
+     * springboot框架依赖的内容
+     */
+    implementation('org.springframework.boot:spring-boot-starter')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('com.aliyun:aliyun-java-sdk-alidns:2.0.11')
+    implementation('com.aliyun:aliyun-java-sdk-core:4.3.2')
+    implementation('com.alibaba:fastjson:1.2.47')
+    implementation('com.squareup.okhttp3:okhttp:3.3.0')
+    implementation('org.projectlombok:lombok:1.16.10')
+}
