@@ -7,6 +7,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.TimeUnit;
+
 @Component
 @EnableScheduling
 @Slf4j
@@ -14,8 +16,11 @@ public class DDNS {
 
     private String oldIp = "-1";
 
-    @Scheduled(cron = "* */10 * * * ?")
-    public void run(){
+    /**
+     * 10min/once
+     */
+    @Scheduled(fixedDelay = 600000)
+    public void run() throws Exception{
         String ip = AliUtil.getNowIp();
         String recordId = AliUtil.queryRecordId();
         log.info("params is ip :{}, recordId :{}", ip, recordId);
@@ -27,6 +32,7 @@ public class DDNS {
 
         if (StringUtils.isEmpty(ip) || StringUtils.isEmpty(recordId)){
             log.info("params is empty");
+            TimeUnit.MINUTES.sleep(10);
             return;
         }
 

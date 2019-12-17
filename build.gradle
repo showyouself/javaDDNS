@@ -16,11 +16,13 @@ buildscript {
     }
 }
 
+
+
 /**
  * 依赖的插件，作为开发/编译/打包时的一种辅助工具，一般不会打包进项目中
  */
 apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
@@ -28,13 +30,13 @@ apply plugin: 'io.spring.dependency-management'
 /**
  * 项目所在的组和版本信息
  */
-group = 'com.zengbingo'
+group = 'ddns.zengbingo'
 
 
 /**
  * 版本信息
  */
-version = ''
+version = '0.0.1'
 
 
 /**
@@ -85,4 +87,6 @@ dependencies {
     implementation('com.alibaba:fastjson:1.2.47')
     implementation('com.squareup.okhttp3:okhttp:3.3.0')
     implementation('org.projectlombok:lombok:1.16.10')
+
+//    annotationProcessor group:'org.projectlombok', name:'lombok', version :'1.16.8'
 }
