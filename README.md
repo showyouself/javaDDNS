@@ -6,3 +6,5 @@
 其中阿里云的id和key在，我的/accesskeys中获取
 https://dc.console.aliyun.com/next/index
 
+参考文档：
+https://blog.zengbingo.com/p/1649.html
