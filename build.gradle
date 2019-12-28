@@ -36,7 +36,7 @@ group = 'ddns.zengbingo'
 /**
  * 版本信息
  */
-version = '0.0.1'
+version = '0.0.2'
 
 
 /**
@@ -89,5 +89,5 @@ dependencies {
     implementation('org.projectlombok:lombok:1.16.10')
     implementation('junit:junit:4.12')
 
-//    annotationProcessor group:'org.projectlombok', name:'lombok', version :'1.16.8'
+    annotationProcessor group:'org.projectlombok', name:'lombok', version :'1.16.8'
 }
