@@ -87,6 +87,7 @@ dependencies {
     implementation('com.alibaba:fastjson:1.2.47')
     implementation('com.squareup.okhttp3:okhttp:3.3.0')
     implementation('org.projectlombok:lombok:1.16.10')
+    implementation('junit:junit:4.12')
 
 //    annotationProcessor group:'org.projectlombok', name:'lombok', version :'1.16.8'
 }
