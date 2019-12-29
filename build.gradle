@@ -36,7 +36,7 @@ group = 'ddns.zengbingo'
 /**
  * 版本信息
  */
-version = '0.0.2'
+version = '0.0.3'
 
 
 /**

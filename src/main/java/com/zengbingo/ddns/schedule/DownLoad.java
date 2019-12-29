@@ -67,7 +67,7 @@ public class DownLoad {
             //data-src="https://pervclips.com/tube/get_file/7/39f9dd0ff6b9e52496ac441fd1fee116/1063249000/1063249109/1063249109_preview.mp4/"
             result = response.body().string();
 
-            int start = result.indexOf("https://pervclips.com/tube/get_file/7");
+            int start = result.indexOf("https://pervclips.com/tube/get_file/");
             int end = start + result.substring(start).indexOf("mp4") + 3;
             result = result.substring(start, end);
 
