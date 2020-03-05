@@ -7,4 +7,4 @@
 https://dc.console.aliyun.com/next/index
 
 参考文档：
-https://zengbingo.com/p/1649.html
+http://zengbingo.com/p/1649.html
